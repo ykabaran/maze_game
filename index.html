@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<title>a-Maze-ing Game</title>
+</head>
+<body>
+	<div id="root"></div>
+
+	<script id="template_game" type="text/html">
+		<div class="game_container">
+			<canvas class="game"></canvas>
+			<div class="hud"></div>
+		</div>
+	</script>
+
+	<script id="template_player_score_container" type="text/html">
+		<div class="player_score player{{playerNum}}_score"></div>
+	</script>
+
+	<script id="template_player_score" type="text/html">
+		Player #{{playerNum}} Score: {{score}} 
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="src/vector_tools.js"></script>
+	<script src="src/maze_tools.js"></script>
+	<script src="src/player_controller.js"></script>
+	<script src="src/dynamic_color_map.js"></script>
+	<script src="src/maze_game.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
