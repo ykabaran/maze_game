@@ -13,7 +13,7 @@ class MazeGame {
 		this.gridCols = 20;
 		this.gridRows = 14;
 		this.playerSize = 0.65;
-		this.numPlayers = 1;
+		this.numPlayers = 2;
 		this.numTargets = 10;
 
 		this.wallColorMap = new DynamicColorMap(this);
@@ -111,7 +111,7 @@ class MazeGame {
 		})();
 
 		const player = this.players[num];
-		const controller = new SmoothPlayerController(this, player, keyMap);
+		const controller = new SnappyPlayerController(this, player, keyMap);
 		player.controller = controller;
 
 		return controller;
@@ -337,7 +337,7 @@ class MazeGame {
 	}
 
 	draw(){
-		console.log("draw");
+		//console.log("draw");
 		const ctx = this.canvasContext;
 		ctx.clearRect(0, 0, this.gridDisplayWidth, this.gridDisplayHeight);
 		ctx.save();
@@ -355,8 +355,8 @@ class MazeGame {
 			this.drawPlayer(player);
 		});
 
-		ctx.globalAlpha = 0.5;
-		ctx.drawImage(this.wallCanvas, 0, 0);
+		//ctx.globalAlpha = 0.5;
+		//ctx.drawImage(this.wallCanvas, 0, 0);
 
 		ctx.restore();
 	}
